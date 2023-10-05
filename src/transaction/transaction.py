@@ -13,26 +13,27 @@ class transaction:
 
 	@abstractmethod
 	def isEmpty(self):
-		"""Checks if the balance for this account is zero
+		"""Checks if the balance for this account is zero and returns True
+		if the balance is zero, else returns false
 		"""		
 		pass
 
 
 	@abstractmethod
-	def credit(self, amount: int):
+	def credit(self, amount: float):
 		"""Increases the balance of this account by a specific amount
 
 		Args:
-			amount (int): the amount to increase the ballance by
+			amount (float): the amount to increase the ballance by
 		"""		
 		pass
 
 	@abstractmethod
-	def debit(self, amount: int):
+	def debit(self, amount: float):
 		"""Decreases the balance of this account by the speifc amount
 
 		Args:
-			amount (int): the amount to decrease the balance by
+			amount (float): the amount to decrease the balance by
 		"""		
 		pass
 
