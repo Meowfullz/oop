@@ -18,5 +18,92 @@ def main():
 	# a1.publicMethod()  referencing a public method will not result in an error
 
 
+	# display the balance of a1
+	print("$%.2f" % (a1.getBalance()))
+
+	# increase the balance of a1 by $50
+	a1.credit(50.0)
+	# a1.credit(-50.0)
+
+	# display the balance of a1
+	print("$%.2f" % (a1.getBalance()))
+
+	#decrease the balance of a1 by $75
+	a1.debit(75.0)
+	# a1.debit(-75.0)
+	# a1.debit(151.0)
+
+	# display the balance of a1
+	print("$%.2f" % (a1.getBalance()))
+
+	# display if the balance of a1 is empty
+	print('Is a1 empty?', a1.isEmpty())
+
+	#create a second account object named a2 and initilize
+	# it balance to zero
+	a2 = account()
+
+	# display the balance  of a2
+	print("$%.2f" % (a2.getBalance()))
+
+	# increase the balance of a2 by $50
+	a2.credit(150.0)
+
+	# display the balance of a2
+	print("$%.2f" % (a2.getBalance()))
+
+	# decrease the balance of a2 by $75
+	a2.debit(75.0)
+
+	# display the balance of a2
+	print("$%.2f" % (a2.getBalance()))
+
+	# display if the balance of a2 is empty
+	print('Is a1 empty?', a2.isEmpty())
+
+	# display a string representation of a1 and a2
+	print(a1)
+	print(a2)
+
+	# create an object named a3 that is equal to None
+	a3  = None
+
+	#test if a1 is equal to a3
+	print('Is a1 equal to a3?', a1.__eq__(a3))
+
+	# create a string object named s1
+	s1 = "Test"
+
+	# test if a1 is equal to s1
+	print('Is a1 equal to s1', a1.__eq__(s1))
+
+	# test if a1 is equal to a2
+	print('Is a1 equal to a2', a1.__eq__(a2))
+
+	# change the balance in a2
+	a2.credit(75.0)
+
+	# test if a1 is equal to a2
+	print('Is a1 equal to a2', a1.__eq__(a2))
+
+	#  display the sum of the balances in a1 and a2
+	print("$%.2f" % account.sum(a1, a2))
+
+	#display the sum of balances in a1 and a3
+	print("$%.2f" % account.sum(a1, a3))
+
+	# display the sum of balances in a1 and s1
+	print("$%.2f" % account.sum(a1, s1))
+	
+
+	#transfer $25 out of a1 and put it into a new account named a4
+	a4 = account.transfer(a1, 25.0)
+	# a4 = account.transfer(a1, -25.0) - Results in ValueError
+	# a4 = account.transfer(a1, 2500.0) Results in Value Error
+	# a4 = account.transfer(a3, 25.0)
+	# a4 = account.transfer(s1, 25.0)
+	# display the balances in a1 and a4
+	print("Balance in a1 $%.2f" % (a1.getBalance()))
+	print("Balance in a4 $%.2f" % (a4.getBalance()))
 if __name__ == "__main__":
 	main()
