@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>account package &#8212; OOP Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="src" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="account-package">
+<h1>account package<a class="headerlink" href="#account-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-account.account">
+<span id="account-account-module"></span><h2>account.account module<a class="headerlink" href="#module-account.account" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="account.account.account">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">account.account.</span></span><span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="transaction.html#transaction.transaction.transaction" title="transaction.transaction.transaction"><code class="xref py py-class docutils literal notranslate"><span class="pre">transaction</span></code></a></p>
+<p>The account class includes  methods to manage the balance of a banking account</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>transaction (transaction): abstract class that defines methods that
+may be implemented by an account class</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>constructs an account with a specified balance if args length is 1, else constructs an
+account with a balance of 0</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>ValueError: indicates args[0] is less than 0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.publicMethod">
+<span class="sig-name descname"><span class="pre">publicMethod</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.publicMethod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.publicMethod" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.getBalance">
+<span class="sig-name descname"><span class="pre">getBalance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.getBalance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.getBalance" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the balance of the calling account</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>float: the balance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.isEmpty">
+<span class="sig-name descname"><span class="pre">isEmpty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.isEmpty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.isEmpty" title="Link to this definition">¶</a></dt>
+<dd><p>checks if the balance of the calling account is 0</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>boolean: True if the balance for the calling is 0, else False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.credit">
+<span class="sig-name descname"><span class="pre">credit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.credit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.credit" title="Link to this definition">¶</a></dt>
+<dd><p>Increases the balance of the calling account by the specified amount</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>amount (float): the amount to increase the balance by</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: indicates the specified amount is less than 0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.debit">
+<span class="sig-name descname"><span class="pre">debit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.debit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.debit" title="Link to this definition">¶</a></dt>
+<dd><p>Decreases the balance of the calling account by the specified amount</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>amount (float): amount to decrease the balance by</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: indicates the specified amount is less than 0
+ValueError: indicates the amount is greate than the balance of the calling account</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the string representation of the account specified</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: string representation of the specified account</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.__eq__" title="Link to this definition">¶</a></dt>
+<dd><p>Tests to see if calling account is equal to the specified object</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>other: The account specified</p>
+</dd>
+<dt>Returns:</dt><dd><p>Boolean: returns true if the specified accounts are equal, False if not</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.sum">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.sum" title="Link to this definition">¶</a></dt>
+<dd><p>Adds the balances of the two accounts specified as long as the objects are not null</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>account1 (account): account object 1
+account2 (account): account object 2</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: Returns the sum of the two accounts if not null, if null returns 0.0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="account.account.account.transfer">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/account/account.html#account.transfer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#account.account.account.transfer" title="Link to this definition">¶</a></dt>
+<dd><p>Transfers a specified amount of funds to a new account, and debits the amount from the specified
+account object</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>a (account): Account to be Debited
+amount (float): Debit amount</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: indicates amount is less than 0
+ValueError: indicates ammount is none
+ValueError: indicates account is not an account type
+ValueError: indicates the debit amount is greater than the balance in the specified amount 
+object to be debited</p>
+</dd>
+<dt>Returns:</dt><dd><p>account: new account object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-account">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-account" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">OOP Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">account package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="savingsaccount.html">savingsaccount package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transaction.html">transaction package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">src</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">src</a></li>
+      <li>Next: <a href="main.html" title="next chapter">main module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Josh Wuller.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/account.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

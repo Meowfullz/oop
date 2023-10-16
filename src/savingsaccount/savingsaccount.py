@@ -7,7 +7,10 @@ class savingsaccount(account):
 		account (account): class that includes methods to change balance and interest rate
 	"""
 	def __init__(self, balance, interestRate):
-		"""constructs the savings account with a specified balance and interest rte
+		"""constructs the savings account with a specified balance and interest rate
+
+		:ivar __balance: balance of this account
+		:ivar __interestRate: interest rate of this account
 
 		Args:
 			balance (float): Balance of the account

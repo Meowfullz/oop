@@ -11,6 +11,8 @@ class account(transaction):
 		"""constructs an account with a specified balance if args length is 1, else constructs an
 		account with a balance of 0
 
+		:ivar __balance: balance of this account
+
 		Raises:
 			ValueError: indicates args[0] is less than 0
 		"""		

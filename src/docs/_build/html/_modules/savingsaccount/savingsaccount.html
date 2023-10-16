@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>savingsaccount.savingsaccount &#8212; OOP Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for savingsaccount.savingsaccount</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">account.account</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="viewcode-block" id="savingsaccount">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount">[docs]</a>
+<span class="k">class</span> <span class="nc">savingsaccount</span><span class="p">(</span><span class="n">account</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;The savings account class has methods to to manage the specified accounts balance and </span>
+<span class="sd">	interest rate of a savings account</span>
+
+<span class="sd">	Args:</span>
+<span class="sd">		account (account): class that includes methods to change balance and interest rate</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="savingsaccount.__init__">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.__init__">[docs]</a>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">balance</span><span class="p">,</span> <span class="n">interestRate</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;constructs the savings account with a specified balance and interest rate</span>
+
+<span class="sd">		:ivar __balance: balance of this account</span>
+<span class="sd">		:ivar __interestRate: interest rate of this account</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			balance (float): Balance of the account</span>
+<span class="sd">			interestRate (float): Interest Rate</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span> <span class="o">=</span> <span class="n">interestRate</span></div>
+
+
+<div class="viewcode-block" id="savingsaccount.setInterestRate">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.setInterestRate">[docs]</a>
+	<span class="k">def</span> <span class="nf">setInterestRate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interestRate</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Sets interest rate for the specified account</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			interestRate (float): interest rate</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span> <span class="o">=</span> <span class="n">interestRate</span></div>
+
+
+<div class="viewcode-block" id="savingsaccount.getInterestRate">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.getInterestRate">[docs]</a>
+	<span class="k">def</span> <span class="nf">getInterestRate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Returns the Interest Rate for the specified account</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			float: Interest Rate</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span></div>
+
+	
+<div class="viewcode-block" id="savingsaccount.getInterest">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.getInterest">[docs]</a>
+	<span class="k">def</span> <span class="nf">getInterest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Returns the amount of interest an account has accrued</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			float: interest</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getBalance</span><span class="p">()</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span></div>
+
+	
+<div class="viewcode-block" id="savingsaccount.credit">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.credit">[docs]</a>
+	<span class="k">def</span> <span class="nf">credit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Increases balance of the specified account by the specified amount and </span>
+<span class="sd">		times it by the interest rate of the specified savings account</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			amount (float): amount to increase the balance by</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">credit</span><span class="p">(</span><span class="n">amount</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="savingsaccount.__str__">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.__str__">[docs]</a>
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Returns the string representation of the calling savings account</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			str: string representation of the calling savings account</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;savings account balance=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">getBalance</span><span class="p">()</span><span class="si">}</span><span class="s2"> interestRate=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+	
+<div class="viewcode-block" id="savingsaccount.__eq__">
+<a class="viewcode-back" href="../../savingsaccount.html#savingsaccount.savingsaccount.savingsaccount.__eq__">[docs]</a>
+	<span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Tests if the savings account is equal to the specified object, if nor returns False</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			other: specified object</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			boolean: If the calling savings account is equal to the specified object, returns true. </span>
+<span class="sd">			Returns False if not</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">savingsaccount</span><span class="p">):</span>
+				<span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">getBalance</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">getBalance</span><span class="p">():</span>
+					<span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">__interestRate</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">__interestRate</span><span class="p">:</span>
+						<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">OOP Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Josh Wuller.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>account.account &#8212; OOP Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for account.account</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">transaction.transaction</span> <span class="kn">import</span> <span class="o">*</span>
+
+<div class="viewcode-block" id="account">
+<a class="viewcode-back" href="../../account.html#account.account.account">[docs]</a>
+<span class="k">class</span> <span class="nc">account</span><span class="p">(</span><span class="n">transaction</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;The account class includes  methods to manage the balance of a banking account</span>
+
+<span class="sd">	Args:</span>
+<span class="sd">		transaction (transaction): abstract class that defines methods that</span>
+<span class="sd">		may be implemented by an account class</span>
+<span class="sd">	&quot;&quot;&quot;</span>	
+<div class="viewcode-block" id="account.__init__">
+<a class="viewcode-back" href="../../account.html#account.account.account.__init__">[docs]</a>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;constructs an account with a specified balance if args length is 1, else constructs an</span>
+<span class="sd">		account with a balance of 0</span>
+
+<span class="sd">		Raises:</span>
+<span class="sd">			ValueError: indicates args[0] is less than 0</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="c1">#print(args)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+			<span class="k">try</span><span class="p">:</span> 
+				<span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Balance is less than zero.&quot;</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+					<span class="n">exit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+			<span class="k">finally</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># This is a private instance varianle</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">public</span> <span class="o">=</span> <span class="s1">&#39;public&#39;</span>  <span class="c1"># This is a public instance variable</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_protected</span> <span class="o">=</span> <span class="s1">&#39;protected&#39;</span> <span class="c1"># This is a protected instance variable</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="mf">0.0</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">public</span> <span class="o">=</span> <span class="s1">&#39;public&#39;</span>  <span class="c1"># This is a public instance variable</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_protected</span> <span class="o">=</span> <span class="s1">&#39;protected&#39;</span> <span class="c1"># This is a protected instance variable</span></div>
+
+
+	<span class="k">def</span> <span class="nf">__privateMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Private Method&#39;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_protectedMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Protected Method&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="account.publicMethod">
+<a class="viewcode-back" href="../../account.html#account.account.account.publicMethod">[docs]</a>
+	<span class="k">def</span> <span class="nf">publicMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Public Method&#39;</span><span class="p">)</span></div>
+
+<span class="w">	</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot; def __del__(self):</span>
+<span class="sd">		print(&#39;Account Destroyed&#39;) &quot;&quot;&quot;</span>
+	
+<div class="viewcode-block" id="account.getBalance">
+<a class="viewcode-back" href="../../account.html#account.account.account.getBalance">[docs]</a>
+	<span class="k">def</span> <span class="nf">getBalance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Prints the balance of the calling account </span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			float: the balance</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span></div>
+
+	
+<div class="viewcode-block" id="account.isEmpty">
+<a class="viewcode-back" href="../../account.html#account.account.account.isEmpty">[docs]</a>
+	<span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;checks if the balance of the calling account is 0</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			boolean: True if the balance for the calling is 0, else False</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+	
+<div class="viewcode-block" id="account.credit">
+<a class="viewcode-back" href="../../account.html#account.account.account.credit">[docs]</a>
+	<span class="k">def</span> <span class="nf">credit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Increases the balance of the calling account by the specified amount </span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			amount (float): the amount to increase the balance by</span>
+
+<span class="sd">		Raises:</span>
+<span class="sd">			ValueError: indicates the specified amount is less than 0</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Credit amount is less than zero&quot;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">exit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">+=</span> <span class="n">amount</span></div>
+
+
+<div class="viewcode-block" id="account.debit">
+<a class="viewcode-back" href="../../account.html#account.account.account.debit">[docs]</a>
+	<span class="k">def</span> <span class="nf">debit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Decreases the balance of the calling account by the specified amount</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			amount (float): amount to decrease the balance by</span>
+
+<span class="sd">		Raises:</span>
+<span class="sd">			ValueError: indicates the specified amount is less than 0</span>
+<span class="sd">			ValueError: indicates the amount is greate than the balance of the calling account</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Debit amount is less than zero.&quot;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Debit amount is greater than the balance.&quot;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">exit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">-=</span> <span class="n">amount</span></div>
+
+
+<div class="viewcode-block" id="account.__str__">
+<a class="viewcode-back" href="../../account.html#account.account.account.__str__">[docs]</a>
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Returns the string representation of the account specified</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			str: string representation of the specified account</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Account balance=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="si">}</span><span class="s2"> public=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">public</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+	
+<div class="viewcode-block" id="account.__eq__">
+<a class="viewcode-back" href="../../account.html#account.account.account.__eq__">[docs]</a>
+	<span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Tests to see if calling account is equal to the specified object</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			other: The account specified</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			Boolean: returns true if the specified accounts are equal, False if not</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="c1"># check if other is not none</span>
+		<span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># check if other is an account type</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span><span class="n">account</span><span class="p">):</span>
+				<span class="c1"># check if others balance is equal to the balance</span>
+				<span class="c1"># of the calling object</span>
+				<span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">__balance</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="p">:</span>
+					<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">return</span> <span class="kc">False</span></div>
+
+	
+
+<div class="viewcode-block" id="account.sum">
+<a class="viewcode-back" href="../../account.html#account.account.account.sum">[docs]</a>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">account1</span><span class="p">,</span> <span class="n">account2</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Adds the balances of the two accounts specified as long as the objects are not null</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			account1 (account): account object 1</span>
+<span class="sd">			account2 (account): account object 2</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			float: Returns the sum of the two accounts if not null, if null returns 0.0</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">if</span><span class="p">(</span><span class="n">account1</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">account2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+			<span class="k">return</span> <span class="mf">0.0</span>
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">account1</span><span class="p">,</span> <span class="n">account</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">account2</span><span class="p">,</span> <span class="n">account</span><span class="p">)):</span>
+			<span class="k">return</span> <span class="mf">0.0</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">account1</span><span class="o">.</span><span class="n">__balance</span> <span class="o">+</span> <span class="n">account2</span><span class="o">.</span><span class="n">__balance</span></div>
+
+		
+<div class="viewcode-block" id="account.transfer">
+<a class="viewcode-back" href="../../account.html#account.account.account.transfer">[docs]</a>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">transfer</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+<span class="w">		</span><span class="sd">&quot;&quot;&quot;Transfers a specified amount of funds to a new account, and debits the amount from the specified</span>
+<span class="sd">		account object</span>
+
+<span class="sd">		Args:</span>
+<span class="sd">			a (account): Account to be Debited</span>
+<span class="sd">			amount (float): Debit amount</span>
+
+<span class="sd">		Raises:</span>
+<span class="sd">			ValueError: indicates amount is less than 0</span>
+<span class="sd">			ValueError: indicates ammount is none</span>
+<span class="sd">			ValueError: indicates account is not an account type</span>
+<span class="sd">			ValueError: indicates the debit amount is greater than the balance in the specified amount </span>
+<span class="sd">			object to be debited</span>
+
+<span class="sd">		Returns:</span>
+<span class="sd">			account: new account object</span>
+<span class="sd">		&quot;&quot;&quot;</span>		
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Debit amount is less than zero&quot;</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Account is None&quot;</span><span class="p">)</span>
+			<span class="k">elif</span><span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">account</span><span class="p">)):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;a is not an account type&quot;</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">getBalance</span><span class="p">()):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Debit amount is greater than the balance in the specified account.&quot;</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+			<span class="n">exit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span> 
+			<span class="n">a</span><span class="o">.</span><span class="n">debit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+			<span class="n">newAccount</span> <span class="o">=</span> <span class="n">account</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">newAccount</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">OOP Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Josh Wuller.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -110,7 +110,7 @@ def main():
 	
 	#create a savings account object named sa1 and initialize 
 	#its balance to $10000 and its interest rate to 6%
-	sa1 = savingsaccount(10000.0, .06)
+	sa1 = savingsaccount(10000.0, 0.06)
 
 	#display the balance of sa1
 	print("Balance in sa1: $%.2f" % (sa1.getBalance()))
